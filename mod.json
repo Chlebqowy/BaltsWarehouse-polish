@@ -1,0 +1,11 @@
+{
+	"id": "balts-warehouse",
+	"name": "Balt's Warehouse",
+	"author": ["baltdev"],
+	"description": "Some miscellaneous additions, including Tarots, Spectrals, Tags, Jokers, etc.",
+	"prefix": "warehouse",
+	"main_file": "main.lua",
+	"badge_colour": "3250A2",
+	"badge_text_colour": "FFFFFF",
+	"version": "1.0.0",
+}

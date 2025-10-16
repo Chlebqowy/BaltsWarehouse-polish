@@ -1,0 +1,21 @@
+[manifest]
+version = "1.0.0"
+priority = -2147483648 # fuck it
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then"
+position = "after"
+payload = '''
+for i=1, #scoring_hand do
+	if not G.GAME.unique_scored_card_ids then G.GAME.unique_scored_card_ids = {count = 0} end
+	local is_unique_card = not G.GAME.unique_scored_card_ids[scoring_hand[i].unique_val]
+	if is_unique_card then
+		G.GAME.unique_scored_card_ids.count = (G.GAME.unique_scored_card_ids.count or 0) + 1
+	end
+	G.GAME.unique_scored_card_ids[scoring_hand[i].unique_val] = true
+end
+'''
+match_indent = false
+times = 1

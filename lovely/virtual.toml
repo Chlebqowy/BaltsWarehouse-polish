@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+priority = -2147483648 # fuck it
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if (not v.shattered) and (not v.destroyed) then"
+position = "at"
+payload = '''
+local was_virtual
+was_virtual, v.virtual_flag = v.virtual_flag, nil
+if (not v.shattered) and (not v.destroyed) and (not was_virtual) then
+'''
+overwrite = true
+match_indent = true

@@ -1,0 +1,18 @@
+[manifest]
+version = "1.0.0"
+priority = -2147483648 # fuck it
+
+[[patches]]
+[patches.pattern]
+target = "engine/sprite.lua"
+pattern = "love.graphics.setColor(overlay or G.BRUTE_OVERLAY or G.C.WHITE)"
+position = "after"
+payload = '''
+if self.upside_down then
+	love.graphics.rotate(math.pi)
+	local transform = self.VT or self.T
+    love.graphics.translate(-transform.w*G.TILESIZE*1.75, -transform.h*G.TILESIZE*1.75)
+end
+'''
+match_indent = false
+times = 1
