@@ -52,7 +52,7 @@ SMODS.Joker {
 SMODS.Joker {
 	key = "librarian",
 	rarity = 1,
-	config = { extra = {per_card = 3} },
+	config = { extra = {per_card = 5} },
 	atlas = "warehouse_jokers", pos = {x = 0, y = 0},
 	loc_vars = function(self, info_queue, card)
 		return {vars = {
