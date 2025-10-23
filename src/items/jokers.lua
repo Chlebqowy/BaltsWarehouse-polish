@@ -2,7 +2,7 @@ SMODS.Joker {
 	key = "sorcerer",
 	rarity = 2,
 	atlas = "warehouse_jokers", pos = {x = 2, y = 0},
-	config = { extra = {per_mult = 5} },
+	config = { extra = {per_mult = 8} },
 	loc_vars = function(self, info_queue, card)
 		return {vars = {
 			card.ability.extra.per_mult,
