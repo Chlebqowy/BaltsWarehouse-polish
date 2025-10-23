@@ -1,4 +1,9 @@
 function WAREHOUSE.return_to_shop(card)
+    if G.blind_select then
+        G.blind_select:remove()
+        G.blind_prompt_box:remove()
+        G.blind_select = nil
+    end
     G:save_settings()
     G.FILE_HANDLER.force = true
     G.STATE_COMPLETE = false
@@ -35,7 +40,7 @@ function WAREHOUSE.return_to_shop(card)
     G.STATE_COMPLETE = false
 
     if card then
-        card:set_debuff(true)
+        card.ability.extra.done = true
     end
 
     G.E_MANAGER:add_event(Event({
@@ -52,4 +57,5 @@ function WAREHOUSE.return_to_shop(card)
         end
     }))
     reset_blinds()
+    WAREHOUSE.returning_to_shop = false
 end

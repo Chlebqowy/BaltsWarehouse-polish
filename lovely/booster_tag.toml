@@ -1,0 +1,24 @@
+[manifest]
+version = "1.0.0"
+priority = -2147483648
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "G.GAME.pack_choices = self.config.center.config.choose or 1"
+position = "after"
+payload = '''
+for i = 1, #G.vouchers.cards do
+    local eval = nil
+    eval = G.vouchers.cards[i]:calculate_joker({
+        cardarea = G.vouchers,
+        open_booster = true,
+        card = self
+    })
+    if eval then
+        card_eval_status_text(G.vouchers.cards[i], 'vouchers', nil, nil, nil, eval)
+    end
+end
+'''
+match_indent = false
+times = 1

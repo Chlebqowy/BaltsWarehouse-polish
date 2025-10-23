@@ -1,9 +1,9 @@
 SMODS.Joker {
 	key = "sorcerer",
 	rarity = 2,
+	atlas = "warehouse_jokers", pos = {x = 2, y = 0},
 	config = { extra = {per_mult = 10} },
 	loc_vars = function(self, info_queue, card)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
 		return {vars = {
 			card.ability.extra.per_mult,
 			card.ability.extra.per_mult * (
@@ -21,9 +21,6 @@ SMODS.Joker {
 				)
 			}
 		end
-		if context.using_consumeable then
-			print(context.consumeable.config.center)
-		end
 		if
 			context.using_consumeable and
 			context.consumeable.config.center.set == "Spectral"
@@ -37,9 +34,9 @@ SMODS.Joker {
 SMODS.Joker {
 	key = "bartender",
 	rarity = 2,
+	atlas = "warehouse_jokers", pos = {x = 1, y = 0},
 	config = { extra = {extra_discard = 1, hand_size = -1} },
 	loc_vars = function(self, info_queue, card)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
 		return {vars = {card.ability.extra.extra_discard, card.ability.extra.hand_size}}
 	end,
     add_to_deck = function(self, card, from_debuff)
@@ -52,17 +49,15 @@ SMODS.Joker {
     end,
 }
 
--- Hook scoring cards to tally how many unique cards have been scored this run
-
 SMODS.Joker {
 	key = "librarian",
 	rarity = 1,
 	config = { extra = {per_card = 10} },
+	atlas = "warehouse_jokers", pos = {x = 0, y = 0},
 	loc_vars = function(self, info_queue, card)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
 		return {vars = {
 			card.ability.extra.per_card,
-			card.ability.extra.per_card * ((G.GAME.unique_scored_card_ids and G.GAME.unique_scored_card_ids.count) or 0)
+			card.ability.extra.per_card * ((G.GAME.unique_scored_cards and G.GAME.unique_scored_cards.count) or 0)
 		}}
 	end,
 	calculate = function(self, card, context)
@@ -70,7 +65,7 @@ SMODS.Joker {
 			return {
 				chips =
 					card.ability.extra.per_card * ((
-						G.GAME.unique_scored_card_ids and G.GAME.unique_scored_card_ids.count)
+						G.GAME.unique_scored_cards and G.GAME.unique_scored_cards.count)
 					or 0)
 			}
 		end

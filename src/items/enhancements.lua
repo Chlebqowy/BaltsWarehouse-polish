@@ -22,18 +22,18 @@ function G.FUNCS.draw_from_play_to_discard(e)
 	return play_discard_hook(e)
 end
 
+s = {}
+
 SMODS.Enhancement {
 	key = "virtual",
-	loc_vars = function(self, info_queue, tag)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
-	end
+	atlas = "warehouse_enhancements", pos = {x = 2, y = 0}
 }
 
 SMODS.Enhancement {
 	key = "worn",
+	atlas = "warehouse_enhancements", pos = {x = 0, y = 0},
 	config = { extra = { chance_denom = 2 } },
 	loc_vars = function(self, info_queue, enha)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
 		return { vars = { G.GAME.probabilities.normal, enha.ability.extra.chance_denom } }
 	end,
 	calculate = function(self, card, context)
@@ -48,35 +48,21 @@ SMODS.Enhancement {
 
 SMODS.Enhancement {
 	key = "dog_eared",
-	config = { extra = { chance_denom = 3 } },
+	atlas = "warehouse_enhancements", pos = {x = 1, y = 0},
+	config = { extra = { chance_denom = 4, inc_discard = 1 } },
 	loc_vars = function(self, info_queue, enha)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
-		return { vars = { G.GAME.probabilities.normal, enha.ability.extra.chance_denom } }
+		return { vars = { G.GAME.probabilities.normal, enha.ability.extra.chance_denom, enha.ability.extra.inc_discard } }
 	end,
 	calculate = function(self, card, context)
 		if
-			context.discard and
-			context.other_card == context.full_hand[#context.full_hand]
+			context.discard and context.other_card == card and
+			SMODS.pseudorandom_probability(card, 'warehouse_dog_eared', 1, card.ability.extra.chance_denom)
 		then
-			local dog_card = nil
-			for _, discarded_card in ipairs(context.full_hand) do
-				print(discarded_card)
-				if SMODS.has_enhancement(discarded_card, "m_warehouse_dog_eared") then
-					dog_card = discarded_card
-					break
-				end
-			end
-			print(dog_card)
-			if
-				dog_card and
-				SMODS.pseudorandom_probability(dog_card, 'warehouse_dog_eared', 1, card.ability.extra.chance_denom)
-			then
-				ease_discard(1)
-				SMODS.calculate_effect({
-					message = localize('k_warehouse_retained'),
-					colour = G.C.YELLOW
-				}, dog_card)
-			end
+			ease_discard(card.ability.extra.inc_discard)
+			return {
+				message = ("+%d"):format(card.ability.extra.inc_discard),
+				colour = G.C.RED
+			}
 		end
 	end
 }

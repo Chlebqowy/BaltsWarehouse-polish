@@ -9,12 +9,20 @@ pattern = "if not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then
 position = "after"
 payload = '''
 for i=1, #scoring_hand do
-	if not G.GAME.unique_scored_card_ids then G.GAME.unique_scored_card_ids = {count = 0} end
-	local is_unique_card = not G.GAME.unique_scored_card_ids[scoring_hand[i].unique_val]
+	if not G.GAME.unique_scored_cards then G.GAME.unique_scored_cards = {count = 0} end
+	local scored_card = scoring_hand[i]
+	local rank_key, suit_key
+	if SMODS.has_no_suit(scored_card) then suit_key = "suitless"
+	elseif SMODS.has_any_suit(scored_card) then suit_key = "wild"
+	else suit_key = scored_card.base.suit end
+	if SMODS.has_no_rank(scored_card) then rank_key = "rankless"
+	else rank_key = scored_card.base.value end
+	local card_key = suit_key .. "." .. rank_key
+	local is_unique_card = not G.GAME.unique_scored_cards[card_key]
 	if is_unique_card then
-		G.GAME.unique_scored_card_ids.count = (G.GAME.unique_scored_card_ids.count or 0) + 1
+		G.GAME.unique_scored_cards.count = (G.GAME.unique_scored_cards.count or 0) + 1
 	end
-	G.GAME.unique_scored_card_ids[scoring_hand[i].unique_val] = true
+	G.GAME.unique_scored_cards[card_key] = true
 end
 '''
 match_indent = false

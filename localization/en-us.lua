@@ -27,9 +27,8 @@ return {
             m_warehouse_dog_eared = {
             	name = "Dog-Eared Card",
             	text = {
-            		"Discards containing this card",
-            		"have a {C:green}#1# in #2#{} chance",
-            		"to {C:attention}retain{} the discard"
+            		"{C:green}#1# in #2#{} chance for +#3# discard",
+            		"when this card is {C:attention}discarded{}"
             	}
             }
 		},
@@ -38,8 +37,7 @@ return {
 				name = "There's Options",
 				text = {
 					"{C:attention}+#1#{} choice in each",
-					"{C:attention}Standard{}, {C:tarot}Arcana{},",
-					"or {C:planet}Planet{} pack"
+					"{C:tarot}#2#{} or {C:planet}#3#{}"
 				}
 			},
 			v_warehouse_more_options = {
@@ -55,16 +53,18 @@ return {
 				text = {
 					"Returns to the previous shop",
 					"upon death with {C:attention}+$#1#{}",
-					"{C:red}Debuffed once used",
+					"and a {C:attention}#2#",
+					"{C:red}Only works once",
 				}
 			},
 			v_warehouse_resurrection = {
 				name = "Resurrection",
 				text = {
 					"Returns to the previous shop",
-					"upon death with",
-					"{C:attention}+$#1#{} and a {C:attention}#2#",
-					"{C:red}Debuffed once used",
+					"upon death with {C:attention}+$#1#{},",
+					"a {C:attention}#2#{}, and a {C:attention}#3#",
+					"{C:red}Only works once",
+					"{C:red}Does not stack with {C:attention}#4#",
 				}
 			},
 			v_warehouse_easy_button = {
@@ -82,7 +82,7 @@ return {
 		Tag = {
 			tag_warehouse_shop = {
 				name = "Shop Tag",
-				text = {"Return to the {C:attention}Shop{}"}
+				text = {"Return to the {C:attention}Shop{}", "with {C:attention}+$#1#{}"}
 			},
 			tag_warehouse_luxury = {
 				name = "Luxury Tag",
@@ -187,10 +187,17 @@ return {
                     "{C:attention}#2#",
                 },
             },
+            c_warehouse_i_wheel={
+                name="The Wheel of Fortune?",
+                text={
+                    "{C:green}#1# in #2#{} chance to remove the",
+                    "{C:attention}Edition{} of #3# selected {C:attention}Joker{}",
+                },
+            },
 		},
 		Spectral = {
             c_warehouse_hyperdrive={
-                name="Hyperdrive",
+                name="Phantom",
                 text={
                     "Add a {C:red}Pink Seal{}",
                     "to {C:attention}#1#{} selected",
@@ -198,7 +205,7 @@ return {
                 },
             },
             c_warehouse_do_over={
-                name="Do-Over",
+                name="Rebirth",
                 text={
                     "Reshuffle the deck",
                     "Reset Hands and Discards",
@@ -227,8 +234,8 @@ return {
 			j_warehouse_librarian={
 				name="Librarian",
 				text={
-					"{C:blue}+#1#{} Chips per {C:attention}unique{}",
-					"scored card this run",
+					"{C:blue}+#1#{} Chips per {C:attention}unique{} scored",
+					"rank/suit combination this run",
 					"{C:inactive}(Currently {C:blue}+#2#{C:inactive})"
 				}
 			},

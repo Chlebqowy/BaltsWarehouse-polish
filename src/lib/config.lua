@@ -1,3 +1,4 @@
+--[[
 WAREHOUSE.config_tab = function()
 	-- See https://github.com/Steamodded/smods/wiki/UI-Guide.
 	return {
@@ -6,3 +7,4 @@ WAREHOUSE.config_tab = function()
 		nodes = {}
 	}
 end
+]]

@@ -1,9 +1,9 @@
 SMODS.Consumable {
 	key = "do_over",
 	set = "Spectral",
+	atlas = "warehouse_spectrals", pos = { x = 0, y = 0 },
 	config = { extra = { reset = 0, pull_from_packs = true } },
 	loc_vars = function(self, info_queue, card)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
 		return { vars = { card.ability.extra.reset } }
 	end,
 	use = function(self, card, area)
@@ -26,9 +26,7 @@ SMODS.Consumable {
 			blocking = false,
 			func = (
 				function()
-					print(#G.deck.cards)
 					if #G.deck.cards < G.deck.config.card_limit then return false end
-					print("Shuffling...")
 					G.deck:shuffle('doover_'..card.unique_val)
                     G.deck:hard_set_T()
 					G.FUNCS.draw_from_deck_to_hand()
@@ -45,9 +43,9 @@ SMODS.Consumable {
 SMODS.Consumable {
 	key = "hyperdrive",
 	set = "Spectral",
+	atlas = "warehouse_spectrals", pos = { x = 1, y = 0 },
 	config = { extra = { seal = 'warehouse_pink' }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
-		table.insert(info_queue, { set = "Other", key = "warehouse_placeholder" })
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.max_highlighted } }
     end,
