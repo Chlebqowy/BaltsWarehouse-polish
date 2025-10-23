@@ -45,7 +45,7 @@ local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
 function G.UIDEF.use_and_sell_buttons(card)
 	local ret = G_UIDEF_use_and_sell_buttons_ref(card)
 	if (card.area == G.pack_cards and G.pack_cards) and
-		card.ability and card.ability.extra and card.ability.extra.pull_from_packs
+		card.ability and card.ability.extra and type(card.ability.extra) == "table" and card.ability.extra.pull_from_packs
 	then
 		return {
 			n = G.UIT.ROOT,
