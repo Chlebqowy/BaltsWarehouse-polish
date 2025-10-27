@@ -25,7 +25,7 @@ return {
             	}
             },
             m_warehouse_dog_eared = {
-            	name = "Karta O Psich uszach",
+            	name = "Karta z Zagiętymi Rogami",
             	text = {
             		"{C:green}#1# na #2#{} szans by otrzymać #3# zrzutki",
             		"gdy ta karta jest {C:attention}odrzucona{}"
