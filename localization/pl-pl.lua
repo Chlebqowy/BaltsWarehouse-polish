@@ -2,164 +2,164 @@ return {
 	descriptions={
 		Edition={
 			e_warehouse_stellar = {
-                name="Stellar",
+                name="Gwiezdna",
                 text={
-                    "Played hand has a",
-                    "temporary {C:attention}extra level{}",
+                    "Każdy zagrany układ pokerowy",
+                    "ma tymczasowy {C:attention}dodatkowy poziom{}",
                 },
             }
 		},
 		Enhanced={
             m_warehouse_virtual = {
-            	name="Virtual Card",
+            	name="Karta Wirtualna",
             	text = {
-            		"{C:attention}Returns to the deck{} once played",
-            		"if deck has any non-Virtual cards"
+            		"{C:attention}Wraca do talii{} po zagraniu",
+            		"jeśli ma ona nie-wirtualne karty"
             	}
             },
             m_warehouse_worn = {
-            	name = "Worn Card",
+            	name = "Karta Przetarta",
             	text = {
-            		"{C:green}#1# in #2#{} chance to {C:red}destroy{}",
-            		"this card when {C:attention}discarded{}"
+            		"{C:green}#1# na #2#{} szans {C:red}zniszczenia{}",
+            		"tej karty gdy jest {C:attention}odrucona{}"
             	}
             },
             m_warehouse_dog_eared = {
-            	name = "Dog-Eared Card",
+            	name = "Karta O Psich uszach",
             	text = {
-            		"{C:green}#1# in #2#{} chance for +#3# discard",
-            		"when this card is {C:attention}discarded{}"
+            		"{C:green}#1# na #2#{} szans by otrzymać #3# zrzutki",
+            		"gdy ta karta jest {C:attention}odrzucona{}"
             	}
             }
 		},
 		Voucher={
 			v_warehouse_theres_options = {
-				name = "There's Options",
+				name = "Są opcje",
 				text = {
-					"{C:attention}+#1#{} choice in each",
-					"{C:tarot}#2#{} or {C:planet}#3#{}"
+					"{C:attention}+#1#{} wybór w każdej",
+					"{C:tarot}#2#{} lub {C:planet}#3#{}"
 				}
 			},
 			v_warehouse_more_options = {
-				name = "More Options",
+				name = "Więcej opcji",
 				text = {
-					"{C:attention}+#1#{} choice in each",
-					"Booster Pack not covered by",
-					"{C:attention}There's Options",
+					"{C:attention}+#1#{} wybór w każdej",
+					"paczce wzmacniającej nie wspomnianej w ",
+					"{C:attention}są opcje",
 				}
 			},
 			v_warehouse_1up = {
 				name = "1-Up",
 				text = {
-					"Returns to the previous shop",
-					"upon death with {C:attention}+$#1#{}",
-					"and a {C:attention}#2#",
-					"{C:red}Only works once",
+					"Przy śmierci cofa cię do",
+					"poprzedniego sklepu z {C:attention}+$#1#{}",
+					"i {C:attention}#2#",
+					"{C:red}Tylko aktywuje się raz",
 				}
 			},
 			v_warehouse_resurrection = {
-				name = "Resurrection",
+				name = "Zmartwychstanie",
 				text = {
-					"Returns to the previous shop",
-					"upon death with {C:attention}+$#1#{},",
-					"a {C:attention}#2#{}, and a {C:attention}#3#",
-					"{C:red}Only works once",
-					"{C:red}Does not stack with {C:attention}#4#",
+					"Przy śmierci cofa cię do",
+					"poprzedniego sklepu z {C:attention}+$#1#{},",
+					"{C:attention}#2#{} i {C:attention}#3#",
+					"{C:red}Tylko aktywuje się raz",
+					"{C:red}Nie nakłada się na {C:attention}#4#",
 				}
 			},
 			v_warehouse_easy_button = {
-				name = "Easy Button",
-				text = {"{C:attention}x#1#{} Blind size"}
+				name = "Przycisk \"łatwy\"",
+				text = {"{C:attention}x#1#{} wartości Przeszkadzajki"}
 			},
 			v_warehouse_wimpmode = {
-				name = "Wimpmode",
+				name = "Tryb mięczaka",
 				text = {
-					"Increase Ante by {C:attention}#1#{}",
-					"at the end of each Ante"
+					"Powiększ ilość wejść o {C:attention}#1#{}",
+					"na końcu każdego wejścia"
 				}
 			}
 		},
 		Tag = {
 			tag_warehouse_shop = {
-				name = "Shop Tag",
-				text = {"Return to the {C:attention}Shop{}", "with {C:attention}+$#1#{}"}
+				name = "Znacznik sklepu",
+				text = {"Powróć do {C:attention}sklepu{}", "z {C:attention}+$#1#{}"}
 			},
 			tag_warehouse_luxury = {
-				name = "Luxury Tag",
+				name = "Znacznik luksusu",
 				text = {
-					"Next {C:attention}Shop{} cannot have",
-					"{C:white,X:blue}Common{} Jokers, and",
-					"may have {C:white,X:tarot}Legendary{} Jokers"
+					"Następny {C:attention}sklep{} nie może mieć",
+					"{C:white,X:blue}pospolitych{} jokerów, a także",
+					"może posiadać {C:white,X:tarot}legendarne{} jokery"
 				}
 			},
 			tag_warehouse_shrink = {
-				name = "Shrink Tag",
+				name = "Znacznik pomniejszenia",
 				text = {
-					"{C:attention}x#1#{} Blind size next round"
+					"{C:attention}x#1#{} wartości Przeszkadzajki w następnej rundzie"
 				}
 			},
 			tag_warehouse_booster = {
-				name = "Booster Tag",
+				name = "Znacznik wzmacniający",
 				text = {
-					"Next Booster Pack has {C:attention}+#1#{} options"
+					"Następna paczka wzmacniająca ma {C:attention}+#1#{} opcji"
 				}
 			}
 		},
 		Tarot = {
 			c_warehouse_i_hanged_man = {
-				name = "The Hanged Man?",
+				name = "Wisielec?",
 				text = {
-                    "Enhances {C:attention}#1#",
-                    "selected cards to",
+                    "Ulepsza {C:attention}#1#",
+                    "wybraną kartę do:",
                     "{C:attention}#2#s",
 				}
 			},
             c_warehouse_i_sun={
-                name="The Sun?",
+                name="Słońce?",
                 text={
-                    "Destroys up to",
-                    "{C:attention}#1#{} {C:hearts}Hearts",
+                    "Niszczy maks.",
+                    "{C:attention}#1#{} wybrane {C:hearts}Kiery",
                 },
             },
             c_warehouse_i_moon={
-                name="The Moon?",
+                name="Księżyc?",
                 text={
-                    "Destroys up to",
-                    "{C:attention}#1#{} {C:clubs}Clubs",
+                    "Niszczy maks.",
+                    "{C:attention}#1#{} wybrane {C:clubs}Trefle",
                 },
             },
             c_warehouse_i_stars={
-                name="The Star?",
+                name="Gwiazda?",
                 text={
-                    "Destroys up to",
-                    "{C:attention}#1#{} {C:diamonds}Diamonds",
+                    "Niszczy maks.",
+                    "{C:attention}#1#{} wybrane {C:diamonds}Karo",
                 },
             },
             c_warehouse_i_world={
-                name="The World?",
+                name="Świat?",
                 text={
-                    "Destroys up to",
-                    "{C:attention}#1#{} {C:spades}Spades",
+                    "Niszczy maks.",
+                    "{C:attention}#1#{} wybrane {C:spades}Piki",
                 },
             },
             c_warehouse_i_hermit={
-                name="The Hermit?",
+                name="Pustelnik?",
                 text={
-                    "Sells a selected {C:attention}Joker{}",
-                    "for {C:attention}x#1#{} its sell value",
+                    "Sprzedaje wybranego {C:attention}jokera{}",
+                    "za {C:attention}#1#x{} jego wartość sprzedaży",
                 },
             },
             c_warehouse_i_lovers={
-                name="The Lovers?",
+                name="Kochankowie?",
                 text={
-                    "Convert {C:attention}#1#{} selected card",
-                    "into a {C:attention}#2#{}",
+                    "Ulepsza {C:attention}#1#{} wybraną kartę",
+                    "w {C:attention}#2#{}",
                 },
             },
             c_warehouse_i_magician={
-                name="The Magician?",
+                name="Mag?",
                 text={
-                    "{C:green}#1# in #2#{} chance to copy",
+                    "{C:green}#1# na #2#{} chance to copy",
                     "{C:attention}#3#{} selected card",
                 },
             },
@@ -180,7 +180,7 @@ return {
                 },
             },
             c_warehouse_i_heirophant={
-                name="The Heirophant?",
+                name="Hierofant?",
                 text={
                     "Enhances {C:attention}#1#{} selected",
                     "card into a",
@@ -188,100 +188,100 @@ return {
                 },
             },
             c_warehouse_i_wheel={
-                name="The Wheel of Fortune?",
+                name="Koło fortuny?",
                 text={
-                    "{C:green}#1# in #2#{} chance to remove the",
-                    "{C:attention}Edition{} of #3# selected {C:attention}Joker{}",
+                    "{C:green}#1# na #2#{} szans by usunąć",
+                    "{C:attention}wersję{} z #3# wybranych {C:attention}jokeróœ{}",
                 },
             },
 		},
 		Spectral = {
             c_warehouse_hyperdrive={
-                name="Phantom",
+                name="Zjawa",
                 text={
-                    "Add a {C:red}Pink Seal{}",
-                    "to {C:attention}#1#{} selected",
-                    "card in your hand",
+                    "Dodaj {C:red}różową pieczęć{}",
+                    "do {C:attention}#1#{} wybranej",
+                    "karty w swojej ręce",
                 },
             },
             c_warehouse_do_over={
-                name="Rebirth",
+                name="Odrodzenie",
                 text={
-                    "Reshuffle the deck",
-                    "Reset Hands and Discards",
-                    "Set round score to {C:attention}#1#{}"
+                    "Ponownie potasuj talię.",
+                    "Zresetuj liczbę rąk i zrzutek",
+                    "Ustawia wynik rundy jako {C:attention}#1#{}"
                 },
             },
 		},
 		Joker = {
 			j_warehouse_sorcerer={
-				name="Sorcerer",
+				name="Czarnoksiężnik",
 				text={
-					"{C:red}+#1#{} Mult per",
-					"{C:attention}Spectral{} card",
-					"used this run",
-					"{C:inactive}(Currently {C:red}+#2#{C:inactive})"
+					"{C:red}+#1#{} mnoż. za każdą",
+					"kartę {C:attention}ducha{}",
+					"użytą w tym podejściu",
+					"{C:inactive}(obecnie mnoż. {C:red}+#2#{C:inactive})"
 				}
 			},
 			j_warehouse_bartender={
-				name="Bartender",
+				name="Barman",
 				text={
-					"Can discard {C:attention}#1#{} extra",
-					"card per discard",
-					"{C:attention}-#1#{} hand size"
+					"Możesz odrzucić {C:attention}#1#{} dodatkową",
+					"kartę na zrzutkę.",
+					"{C:attention}-#1#{} do rozmiaru ręki"
 				}
 			},
 			j_warehouse_librarian={
-				name="Librarian",
+				name="Bibliotekarz",
 				text={
-					"{C:blue}+#1#{} Chips per {C:attention}unique{} scored",
-					"rank/suit combination this run",
-					"{C:inactive}(Currently {C:blue}+#2#{C:inactive})"
+					"{C:blue}+#1#{} żet. za każdą {C:attention}różną{} kombinacje",
+					"koloru/rangi punktowaną w tym podejściu",
+					"{C:inactive}(obecnie: {C:blue}+#2#{C:inactive} żet.)"
 				}
 			},
 			j_warehouse_sketch={
-                name="Police Sketch",
+                name="Szkic policyjny",
                 text={
-                    "Copies the ability",
-                    "of the last sold {C:attention}Joker{}",
+                    "Powiela zdolność",
+                    "ostatniego sprzedanego {C:attention}jokera{}",
                 },
 			}
 		},
 		Other = {
             warehouse_pink_seal={
-                name="Pink Seal",
+                name="Różowa pieczęć",
                 text={
-                    "Balances {C:attention}#1#%{} of {C:blue}Chips{} and {C:red}Mult{}",
+                    "Wyrównuje {C:attention}#1#%{} {C:blue}żet.{} i {C:red}mnoż.{}",
                 },
             },
             warehouse_blank_card={
-            	name="Blank Card",
+            	name="Pusta karta",
             	text={
-            		"Copies suit and rank of card to the {C:attention}right{}"
+            		"Kopiuje kolor i rangę karty na {C:attention}prawo{}"
             	}
             },
             warehouse_todo={
-            	name="TODO",
+            	name="Do zrobienia",
             	text={
-            		"This feature has not been implemented yet."
+            		"Ta funkcja jeszcze nie jest skończona"
             	}
             },
             warehouse_placeholder={
-            	name="Placeholder",
+            	name="Element tymczasowy",
             	text={
-            		"This addition uses placeholder assets",
-            		"that are subject to change."
+            		"Ten dodatek używa tymczasowych zasobów",
+            		"które mogą się zmienić."
             	}
             }
 		},
 	},
 	misc={
 		labels = {
-			warehouse_pink_seal="Pink Seal"
+			warehouse_pink_seal="Różowa pieczęć"
 		},
 		dictionary = {
-			b_pull = "PULL",
-			k_warehouse_retained = "Retained!"
+			b_pull = "WYCIĄGNIĘCIE",
+			k_warehouse_retained = "Zatrzymano!"
 		}
 	}
 }
